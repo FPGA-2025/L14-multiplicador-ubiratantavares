@@ -13,6 +13,8 @@ reg [N-1:0] multiplicand;
 wire [2*N-1:0] product;
 wire ready;
 
+reg [2*N-1:0] expected_product;
+
 reg [2*N+15:0] test_mem [0:255]; // Linha: mm_kk_pppp => 8+8+16 bits
 integer i;
 
@@ -68,7 +70,5 @@ initial begin
     $display("Testbench finalizado.");
     $finish;
 end
-
-reg [2*N-1:0] expected_product;
 
 endmodule
